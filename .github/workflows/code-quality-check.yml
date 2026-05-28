@@ -25,6 +25,8 @@ jobs:
         id: eslint
         if: github.event_name == 'pull_request'
         run: |
-          curl -f -x POST  -H "Content-Type: application/json" \
-            -d "{\"pull_request_number\":${{ github.event.pull_request.number }}\"}" \
+          curl -f -X POST  -H "Content-Type: application/json" \
+            -d "{\"pull_request_number\":${{ github.event.pull_request.number }}}" \
             https://always-childhood-anything.ngrok-free.dev/webhook/91120b2d-b202-4701-8137-f34da50a222e
+
+            
